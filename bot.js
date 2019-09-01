@@ -82,9 +82,7 @@ bot.on('message', message => {
 
     if (message.content.startsWith(`${prefix}dice`)) {
         let number = Math.floor(Math.random() * 6);
-        message.channel.send(number).catch(() => {
-            message.channel.send('> !ERROR!');
-        })
+        message.channel.send(number);
     }
 
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
