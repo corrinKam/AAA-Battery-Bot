@@ -4,6 +4,9 @@ const Discord = require('discord.js');
 const { prefix, bot_token, giphy_token } = require('./config.json');
 const bot = new Discord.Client();
 
+bot_token: process.env.BOT_TOKEN;
+giphy_token: process.env.GIPHY_TOKEN;
+
 require("./bot.js");
 
 var GphApiClient = require('giphy-js-sdk-core')
