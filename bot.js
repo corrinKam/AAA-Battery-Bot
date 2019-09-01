@@ -6,9 +6,9 @@ const prefix = "!";
 const bot = new Discord.Client();
 
 const bot_token = process.env.BOT_TOKEN;
-console.log(bot_token + "pQWo38zALm");
+console.log("bot token ONLINE");
 const giphy_token = process.env.GIPHY_TOKEN;
-console.log(giphy_token + "MKa9Ow2qP");
+console.log("giphy token ONLINE");
 
 require("./bot.js");
 
