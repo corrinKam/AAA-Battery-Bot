@@ -29,7 +29,7 @@ bot.on('message', message => {
         //message.channel.send("> kick (only if you have perms :eyes:)");
         //message.channel.send("> help");
 
-        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !help");
+        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !dice (roll a dice)" + "\n" + "> !help");
     }
 
     if (message.content.startsWith(`${prefix}cat`)) {
@@ -37,17 +37,11 @@ bot.on('message', message => {
             .then((response) => {
                 let totalResponses = response.data.length;
                 //all the gif results
-                //let responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
                 let responseIndex = Math.floor(Math.random() * totalResponses);
                 //gives random number
                 let responseFinal = response.data[responseIndex];
                 //gives single result
 
-                /** message.channel.send({
-                    files: [responseFinal.images.fixed_height.url]
-                }).catch(() => {
-                    message.channel.send('> !ERROR!');
-                })*/
                 message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
                     message.channel.send('> !ERROR!');
                 })
@@ -84,6 +78,10 @@ bot.on('message', message => {
                     message.channel.send('> !ERROR!');
                 })
             })
+    }
+
+    if (message.content.startsWith(`${prefix}dice`)) {
+        let number = Math.floor(Math.random() * 6);
     }
 
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
