@@ -2,11 +2,7 @@
 
 const Discord = require('discord.js');
 const { prefix, bot_token, giphy_token } = require('./config.json');
-const bot = new Discord.Client({
-    bot_token: process.env.BOT_TOKEN,
-    //giphy_token: process.env.GIPHY_TOKEN,
-    autorun: true
-});
+const bot = new Discord.Client();
 
 require("./bot.js");
 
@@ -113,9 +109,28 @@ bot.on('message', message => {
     if (message.content === "owo") {
         message.channel.send("what's this?");
     }
+    if (message.content === "OwO") {
+        message.channel.send("wHaT's tHiS?");
+    }
+    if (message.content === "OWO") {
+        message.channel.send("What's this?");
+    }
 
     if (message.content === "ping") {
         message.channel.send("pong");
+    }
+    if (message.content === "Ping") {
+        message.channel.send("Pong");
+    }
+
+    if (message.content === "rood") {
+        message.channel.send(":p");
+    }
+    if (message.content === "r00d") {
+        message.channel.send(":p");
+    }
+    if (message.content === "rOOd") {
+        message.channel.send(":p");
     }
 })
 
