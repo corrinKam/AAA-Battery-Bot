@@ -81,8 +81,17 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}dice`)) {
-        let number = Math.floor(Math.random() * 6);
-        message.channel.send(number);
+        //let number = Math.floor(Math.random() * 6);
+        //message.channel.send(number);
+
+        let dice = {
+            sides: 6,
+            roll: function() {
+                var randomNumber =
+                    Math.floor(Math.random() * this.sides);
+                message.channel.send(randomNumber);
+            }
+        }
     }
 
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
