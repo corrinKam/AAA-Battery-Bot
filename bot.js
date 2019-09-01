@@ -1,11 +1,14 @@
 //Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
-const { prefix, bot_token, giphy_token } = require('./config.json');
+//const { prefix, bot_token, giphy_token } = require('./config.json');
+const prefix = "!";
 const bot = new Discord.Client();
 
-bot_token: process.env.BOT_TOKEN;
-giphy_token: process.env.GIPHY_TOKEN;
+const bot_token = process.env.BOT_TOKEN;
+console.log(bot_token);
+const giphy_token = process.env.GIPHY_TOKEN;
+console.log(giphy_token);
 
 require("./bot.js");
 
