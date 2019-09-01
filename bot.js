@@ -1,11 +1,17 @@
 //Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
-const { prefix, token, giphyToken } = require('./config.json');
-const bot = new Discord.Client();
+const { prefix, bot_token, giphy_token } = require('./config.json');
+const bot = new Discord.Client({
+    bot_token: process.env.BOT_TOKEN,
+    //giphy_token: process.env.GIPHY_TOKEN,
+    autorun: true
+});
+
+require("./bot.js");
 
 var GphApiClient = require('giphy-js-sdk-core')
-giphy = GphApiClient(giphyToken)
+giphy = GphApiClient(giphy_token)
 
 bot.once('ready', () => {
     console.log("Bot ONLINE")
@@ -21,22 +27,42 @@ bot.on('message', message => {
         //message.channel.send("> kick (only if you have perms :eyes:)");
         //message.channel.send("> help");
 
-        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> -gif (random gif)" + "\n" + "> -cat (random cat gif)" + "\n" + "> -kick (PERMS only :eyes:)" + "\n" + "> -help");
+        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> -gif (random gif)" + "\n" + "> -cat (random cat gif)" + "\n" + "> -bird (random bird gif)" + "\n" + "> -kick (PERMS only :eyes:)" + "\n" + "> -help");
     }
 
     if (message.content.startsWith(`${prefix}cat`)) {
         giphy.search('gifs', { "q": "cat" })
             .then((response) => {
-                var totalResponses = response.data.length;
+                let totalResponses = response.data.length;
                 //all the gif results
-                var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+                //let responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+                let responseIndex = Math.floor(Math.random() * totalResponses);
                 //gives random number
-                var responseFinal = response.data[responseIndex];
+                let responseFinal = response.data[responseIndex];
                 //gives single result
 
-                message.channel.send({
+                /** message.channel.send({
                     files: [responseFinal.images.fixed_height.url]
                 }).catch(() => {
+                    message.channel.send('> !ERROR!');
+                })*/
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
+                    message.channel.send('> !ERROR!');
+                })
+            })
+    }
+
+    if (message.content.startsWith(`${prefix}bird`)) {
+        giphy.search('gifs', { "q": "bird" })
+            .then((response) => {
+                let totalResponses = response.data.length;
+                //all the gif results
+                let responseIndex = Math.floor(Math.random() * totalResponses);
+                //gives random number
+                let responseFinal = response.data[responseIndex];
+                //gives single result
+
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
                     message.channel.send('> !ERROR!');
                 })
             })
@@ -45,16 +71,14 @@ bot.on('message', message => {
     if (message.content.startsWith(`${prefix}gif`)) {
         giphy.search('gifs', { "q": "random" })
             .then((response) => {
-                var totalResponses = response.data.length;
+                let totalResponses = response.data.length;
                 //all the gif results
-                var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+                let responseIndex = Math.floor(Math.random() * totalResponses);
                 //gives random number
-                var responseFinal = response.data[responseIndex];
+                let responseFinal = response.data[responseIndex];
                 //gives single result
 
-                message.channel.send({
-                    files: [responseFinal.images.fixed_height.url]
-                }).catch(() => {
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
                     message.channel.send('> !ERROR!');
                 })
             })
@@ -71,16 +95,14 @@ bot.on('message', message => {
             member.kick().then((member) => {
                 giphy.search('gifs', { "q": "bye" })
                     .then((response) => {
-                        var totalResponses = response.data.length;
+                        let totalResponses = response.data.length;
                         //all the gif results
-                        var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+                        let responseIndex = Math.floor(Math.random() * totalResponses);
                         //gives random number
-                        var responseFinal = response.data[responseIndex];
+                        let responseFinal = response.data[responseIndex];
                         //gives single result
 
-                        message.channel.send(":wave: " + "User: '" + member.displayName + "' has been kicked!", {
-                            files: [responseFinal.images.fixed_height.url]
-                        })
+                        message.channel.send(":wave: " + "User: '" + member.displayName + "' has been kicked!" + "\n" + responseFinal.images.fixed_height.url)
                     }).catch(() => {
                         message.channel.send('> !ERROR!');
                     })
@@ -91,6 +113,11 @@ bot.on('message', message => {
     if (message.content === "owo") {
         message.channel.send("what's this?");
     }
+
+    if (message.content === "ping") {
+        message.channel.send("pong");
+    }
 })
 
-bot.login(token);
+//bot.login(process.env.BOT_TOKEN);
+bot.login(bot_token);
