@@ -1,7 +1,6 @@
 //Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
-//const { prefix, bot_token, giphy_token } = require('./config.json');
 const prefix = "!";
 const bot = new Discord.Client();
 
@@ -10,7 +9,7 @@ console.log("bot token ONLINE");
 const giphy_token = process.env.GIPHY_TOKEN;
 console.log("giphy token ONLINE");
 
-require("./bot.js");
+//require("./bot.js");
 
 var GphApiClient = require('giphy-js-sdk-core')
 giphy = GphApiClient(giphy_token)
@@ -124,7 +123,7 @@ bot.on('message', message => {
         message.channel.send("Pong");
     }
 
-    if (message.content === "rood") {
+    if (message.content.includes("rood")) {
         message.channel.send(":p");
     }
     if (message.content === "r00d") {
@@ -135,5 +134,4 @@ bot.on('message', message => {
     }
 })
 
-//bot.login(process.env.BOT_TOKEN);
 bot.login(bot_token);
