@@ -23,7 +23,7 @@ bot.on('message', message => {
     //logs all messages sent to console
 
     if (message.content.startsWith(`${prefix}help`)) {
-        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !dice (roll a dice)" + "\n" + "> !help");
+        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !dice (roll a dice)" + "\n" + "> !coin (flip a coin)" + "\n" + "> !help");
     }
 
     if (message.content.startsWith(`${prefix}cat`)) {
@@ -77,6 +77,15 @@ bot.on('message', message => {
     if (message.content.startsWith(`${prefix}dice`)) {
         let number = Math.floor(Math.random() * 6);
         message.channel.send(number);
+    }
+
+    if (message.content.startsWith(`${prefix}coin`)) {
+        let coin = Math.floor(Math.random() * 2);
+        if (coin === 1) {
+            message.channel.send("Heads!");
+        } else if (coin === 2) {
+            message.channel.send("Tails!");
+        }
     }
 
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
