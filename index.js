@@ -1,4 +1,4 @@
-//Discord bot name: AAA Battery
+//Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
 const { prefix, token, giphyToken } = require('./config.json');
