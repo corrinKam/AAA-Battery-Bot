@@ -24,11 +24,6 @@ bot.on('message', message => {
     //logs all messages sent to console
 
     if (message.content.startsWith(`${prefix}help`)) {
-        //message.channel.send("> List of available commands");
-        //message.channel.send("> gif");
-        //message.channel.send("> kick (only if you have perms :eyes:)");
-        //message.channel.send("> help");
-
         message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !dice (roll a dice)" + "\n" + "> !help");
     }
 
@@ -81,17 +76,9 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}dice`)) {
-        let number = Math.floor(Math.random() * 6);
+        const sides = "6";
+        let number = Math.floor(Math.random() * sides);
         message.channel.send(number);
-
-        /*let dice = {
-            sides: 6,
-            roll: function() {
-                var randomNumber =
-                    Math.floor(Math.random() * this.sides);
-                message.channel.send(randomNumber);
-            }
-        }*/
     }
 
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
