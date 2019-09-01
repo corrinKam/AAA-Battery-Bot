@@ -75,8 +75,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}dice`)) {
-        const sides = "6";
-        let number = Math.floor(Math.random() * sides);
+        let number = Math.floor(Math.random() * 6);
         message.channel.send(number);
     }
 
