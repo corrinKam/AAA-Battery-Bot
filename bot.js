@@ -117,19 +117,19 @@ bot.on('message', message => {
     }
 
     if (message.content === "ping") {
-        message.channel.send("pong");
+        message.channel.send("pong!");
     }
     if (message.content === "Ping") {
-        message.channel.send("Pong");
+        message.channel.send("Pong!");
     }
 
     if (message.content.includes("rood")) {
         message.channel.send(":p");
     }
-    if (message.content === "r00d") {
+    if (message.content.includes("r00d")) {
         message.channel.send(":p");
     }
-    if (message.content === "rOOd") {
+    if (message.content.includes("rOOd")) {
         message.channel.send(":p");
     }
 })
