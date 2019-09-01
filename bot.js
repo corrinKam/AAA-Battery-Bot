@@ -16,7 +16,7 @@ var GphApiClient = require('giphy-js-sdk-core')
 giphy = GphApiClient(giphy_token)
 
 bot.once('ready', () => {
-    console.log("Bot ONLINE")
+    console.log("AAA Battery ONLINE")
 })
 
 bot.on('message', message => {
@@ -29,7 +29,7 @@ bot.on('message', message => {
         //message.channel.send("> kick (only if you have perms :eyes:)");
         //message.channel.send("> help");
 
-        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> -gif (random gif)" + "\n" + "> -cat (random cat gif)" + "\n" + "> -bird (random bird gif)" + "\n" + "> -kick (PERMS only :eyes:)" + "\n" + "> -help");
+        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !help");
     }
 
     if (message.content.startsWith(`${prefix}cat`)) {
