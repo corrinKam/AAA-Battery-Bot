@@ -75,7 +75,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}dice`)) {
-        let number = Math.floor(Math.random() * 6);
+        let number = Math.floor(Math.random() * 6) + 1;
         message.channel.send("Rolling a die...");
         message.channel.send(number);
     }
