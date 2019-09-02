@@ -83,7 +83,7 @@ bot.on('message', message => {
         let coin = Math.floor(Math.random() * 2);
         if (coin === 1) {
             message.channel.send("Heads!");
-        } else if (coin === 2) {
+        } else {
             message.channel.send("Tails!");
         }
     }
