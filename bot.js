@@ -76,11 +76,13 @@ bot.on('message', message => {
 
     if (message.content.startsWith(`${prefix}dice`)) {
         let number = Math.floor(Math.random() * 6);
+        message.channel.send("Rolling a die...");
         message.channel.send(number);
     }
 
     if (message.content.startsWith(`${prefix}coin`)) {
         let coin = Math.floor(Math.random() * 2);
+        message.channel.send("Flipping a coin...");
         if (coin === 1) {
             message.channel.send("Heads!");
         } else {
