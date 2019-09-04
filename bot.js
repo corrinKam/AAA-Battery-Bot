@@ -119,10 +119,19 @@ bot.on('message', message => {
     if (message.content === "owo") {
         message.channel.send("what's this?");
     }
-    if (message.content === "OwO") {
+    if (message.content === "OWO") {
         message.channel.send("wHaT's tHiS?");
     }
-    if (message.content === "OWO") {
+    if (message.content === "Owo") {
+        message.channel.send("What's this?");
+    }
+    if (message.content === "OWo") {
+        message.channel.send("What's this?");
+    }
+    if (message.content === "oWo") {
+        message.channel.send("What's this?");
+    }
+    if (message.content === "oWO") {
         message.channel.send("What's this?");
     }
 
