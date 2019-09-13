@@ -124,8 +124,8 @@ bot.on('message', message => {
         message.channel.send("Pong!");
     }
 
-    if (message.channel.includes("rood") || message.channel.includes("r00d") || message.channel.includes("rOOd")) {
-        message.channel.send(":p");
+    if (message.content.includes("rood") || message.content.includes("r00d") || message.content.includes("rOOd")) {
+        message.channel.send(":p")
     }
 })
 
