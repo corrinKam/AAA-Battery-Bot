@@ -116,43 +116,15 @@ bot.on('message', message => {
         }
     }
 
-    /*if (message.content === "owo") {
-        message.channel.send("what's this?");
-    }
-    if (message.content === "OWO") {
-        message.channel.send("wHaT's tHiS?");
-    }
-    if (message.content === "Owo") {
-        message.channel.send("What's this?");
-    }
-    if (message.content === "OWo") {
-        message.channel.send("What's this?");
-    }
-    if (message.content === "oWo") {
-        message.channel.send("What's this?");
-    }
-    if (message.content === "oWO") {
-        message.channel.send("What's this?");
-    } */
-
     if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
         message.channel.send("what's this?");
     }
 
-    if (message.content === "ping") {
-        message.channel.send("pong!");
-    }
-    if (message.content === "Ping") {
+    if (message.content === "ping" || message.content === "Ping") {
         message.channel.send("Pong!");
     }
 
-    if (message.content.includes("rood")) {
-        message.channel.send(":p");
-    }
-    if (message.content.includes("r00d")) {
-        message.channel.send(":p");
-    }
-    if (message.content.includes("rOOd")) {
+    if (message.channel.includes("rood") || message.channel.includes("r00d") || message.channel.includes("rOOd")) {
         message.channel.send(":p");
     }
 })
