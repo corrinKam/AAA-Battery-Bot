@@ -90,6 +90,12 @@ bot.on('message', message => {
         }
     }
 
+    if (message.content.startsWith(`${prefix}number`)) {
+        let number = Math.floor(Math.random() * 100);
+        message.channel.send("Generating a random number...");
+        message.channel.send(number);
+    }
+
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
     //kick only works with ppl who have kick and ban perms
     {
