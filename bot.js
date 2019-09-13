@@ -116,7 +116,7 @@ bot.on('message', message => {
         }
     }
 
-    if (message.content === "owo") {
+    /*if (message.content === "owo") {
         message.channel.send("what's this?");
     }
     if (message.content === "OWO") {
@@ -133,6 +133,10 @@ bot.on('message', message => {
     }
     if (message.content === "oWO") {
         message.channel.send("What's this?");
+    } */
+
+    if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
+        message.channel.send("what's this?");
     }
 
     if (message.content === "ping") {
