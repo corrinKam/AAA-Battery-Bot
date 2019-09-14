@@ -127,23 +127,6 @@ bot.on('message', message => {
         }
     }
 
-    /*if (message.member.hasPermission(['MUTE_MEMBERS'])) {
-        if (message.content.startsWith(`${prefix}mute`)) {
-            let member = message.mentions.members.first();
-            member.mute().then((member) => {
-                giphy.search('gifs', { "q": "shush" })
-                    .then((response) => {
-                        let totalResponses = response.data.length;
-                        let responseIndex = Math.floor(Math.random() * totalResponses);
-                        let responseFinal = response.data[responseIndex];
-                        message.channel.send(":wave: " + "User: '" + member.displayName + "' has been kicked!" + "\n" + responseFinal.images.fixed_height.url)
-                    }).catch(() => {
-                        message.channel.send('> !ERROR!');
-                    })
-            })
-        }
-    }*/
-
     if (message.content.startsWith(`${prefix}h`) || message.content.startsWith(`${prefix}he`) || message.content.startsWith(`${prefix}hel`)) {
         message.channel.send("Did you mean !help?");
     }
