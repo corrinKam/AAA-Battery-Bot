@@ -144,6 +144,10 @@ bot.on('message', message => {
         }
     }*/
 
+    if (message.content.startsWith(`${prefix}h`) || message.content.startsWith(`${prefix}he`) || message.content.startsWith(`${prefix}hel`)) {
+        message.channel.send("Did you mean !help?");
+    }
+
     if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
         message.channel.send("what's this?");
     }
