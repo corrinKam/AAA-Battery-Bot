@@ -127,7 +127,7 @@ bot.on('message', message => {
         }
     }
 
-    if (message.member.hasPermission(['MUTE_MEMBERS'])) {
+    /*if (message.member.hasPermission(['MUTE_MEMBERS'])) {
         if (message.content.startsWith(`${prefix}mute`)) {
             let member = message.mentions.members.first();
             member.mute().then((member) => {
@@ -142,7 +142,7 @@ bot.on('message', message => {
                     })
             })
         }
-    }
+    }*/
 
     if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
         message.channel.send("what's this?");
