@@ -23,7 +23,14 @@ bot.on('message', message => {
     //logs all messages sent to console
 
     if (message.content.startsWith(`${prefix}help`)) {
-        message.channel.send("> List of available commands:" + " \n" + "> \n" + "> !gif (random gif)" + "\n" + "> !cat (random cat gif)" + "\n" + "> !bird (random bird gif)" + "\n" + "> !dice (roll a dice)" + "\n" + "> !coin (flip a coin)" + "\n" + "> !number (generate a number between 0 and 100)" + "\n" + "> !help");
+        message.channel.send("> List of available commands:" + " \n" + "> \n" +
+            "> !gif (random gif)" +
+            "\n" + "> !cat (random cat gif)" +
+            "\n" + "> !bird (random bird gif)" +
+            "\n" + "> !dice (roll a dice)" +
+            "\n" + "> !coin (flip a coin)" +
+            "\n" + "> !number (generate a number between 0 and 100)" +
+            "\n" + "> !help");
     }
 
     if (message.content.startsWith(`${prefix}cat`)) {
