@@ -23,8 +23,8 @@ bot.on('message', message => {
     //logs all messages sent to console
 
     if (message.content.startsWith(`${prefix}help`)) {
-        message.channel.send("> List of available commands:" + " \n" + "> \n" +
-            "> !gif (random gif)" +
+        message.channel.send("> List of available commands:" + " \n" +
+            "> \n" + "> !gif (random gif)" +
             "\n" + "> !cat (random cat gif)" +
             "\n" + "> !bird (random bird gif)" +
             "\n" + "> !dice (roll a dice)" +
