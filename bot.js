@@ -107,8 +107,6 @@ bot.on('message', message => {
     //kick only works with ppl who have kick and ban perms
     {
         if (message.content.startsWith(`${prefix}kick`)) {
-            //message.channel.send("Kicked")
-
             let member = message.mentions.members.first();
             //any mentions in the message line above
             member.kick().then((member) => {
@@ -121,6 +119,23 @@ bot.on('message', message => {
                         let responseFinal = response.data[responseIndex];
                         //gives single result
 
+                        message.channel.send(":wave: " + "User: '" + member.displayName + "' has been kicked!" + "\n" + responseFinal.images.fixed_height.url)
+                    }).catch(() => {
+                        message.channel.send('> !ERROR!');
+                    })
+            })
+        }
+    }
+
+    if (message.member.hasPermission(['MUTE_MEMBERS'])) {
+        if (message.content.startsWith(`${prefix}mute`)) {
+            let member = message.mentions.members.first();
+            member.mute().then((member) => {
+                giphy.search('gifs', { "q": "quiet" })
+                    .then((response) => {
+                        let totalResponses = response.data.length;
+                        let responseIndex = Math.floor(Math.random() * totalResponses);
+                        let responseFinal = response.data[responseIndex];
                         message.channel.send(":wave: " + "User: '" + member.displayName + "' has been kicked!" + "\n" + responseFinal.images.fixed_height.url)
                     }).catch(() => {
                         message.channel.send('> !ERROR!');
