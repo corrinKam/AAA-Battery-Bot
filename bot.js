@@ -127,7 +127,7 @@ bot.on('message', message => {
         }
     }
 
-    if (message.content.startsWith(`${prefix}h`) || message.content.startsWith(`${prefix}he`) || message.content.startsWith(`${prefix}hel`)) {
+    if (message.content === "!h" || message.content === "!he" || message.content === "!hel") {
         message.channel.send("Did you mean !help?");
     }
 
