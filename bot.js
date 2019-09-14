@@ -131,7 +131,7 @@ bot.on('message', message => {
         if (message.content.startsWith(`${prefix}mute`)) {
             let member = message.mentions.members.first();
             member.mute().then((member) => {
-                giphy.search('gifs', { "q": "quiet" })
+                giphy.search('gifs', { "q": "shush" })
                     .then((response) => {
                         let totalResponses = response.data.length;
                         let responseIndex = Math.floor(Math.random() * totalResponses);
