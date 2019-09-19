@@ -26,6 +26,7 @@ bot.on('message', message => {
         message.channel.send("> List of available commands:" + " \n" +
             "> \n" + "> !gif (random gif)" +
             "\n" + "> !cat (random cat gif)" +
+            "\n" + "> !dog (random dog gif)" +
             "\n" + "> !bird (random bird gif)" +
             //"\n" + "> !urban (search something on urban dictionary)" +
             "\n" + "> !dice (roll a dice)" +
@@ -36,6 +37,22 @@ bot.on('message', message => {
 
     if (message.content.startsWith(`${prefix}cat`)) {
         giphy.search('gifs', { "q": "cat" })
+            .then((response) => {
+                let totalResponses = response.data.length;
+                //all the gif results
+                let responseIndex = Math.floor(Math.random() * totalResponses);
+                //gives random number
+                let responseFinal = response.data[responseIndex];
+                //gives single result
+
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
+                    message.channel.send('> !ERROR!');
+                })
+            })
+    }
+
+    if (message.content.startsWith(`${prefix}dog`)) {
+        giphy.search('gifs', { "q": "dog" })
             .then((response) => {
                 let totalResponses = response.data.length;
                 //all the gif results
