@@ -9,7 +9,7 @@ console.log("bot token ONLINE");
 const giphy_token = process.env.GIPHY_TOKEN;
 console.log("giphy token ONLINE");
 
-//require("./bot.js");
+const urban = require('urban');
 
 var GphApiClient = require('giphy-js-sdk-core')
 giphy = GphApiClient(giphy_token)
@@ -79,6 +79,17 @@ bot.on('message', message => {
                     message.channel.send('> !ERROR!');
                 })
             })
+    }
+
+    if (message.content.startsWith(`${prefix}urban`)) {
+        if (args.length < 1) {
+            message.channel.send("Please enter an item to search");
+        }
+        let string = args.join(" ");
+
+        urban(string).first(json => {
+            console.log(json);
+        })
     }
 
     if (message.content.startsWith(`${prefix}dice`)) {
