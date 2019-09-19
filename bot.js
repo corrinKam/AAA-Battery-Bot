@@ -9,7 +9,7 @@ console.log("bot token ONLINE");
 const giphy_token = process.env.GIPHY_TOKEN;
 console.log("giphy token ONLINE");
 
-const urban = require('urban');
+//const urban = require('urban');
 
 var GphApiClient = require('giphy-js-sdk-core')
 giphy = GphApiClient(giphy_token)
@@ -27,6 +27,7 @@ bot.on('message', message => {
             "> \n" + "> !gif (random gif)" +
             "\n" + "> !cat (random cat gif)" +
             "\n" + "> !bird (random bird gif)" +
+            //"\n" + "> !urban (search something on urban dictionary)" +
             "\n" + "> !dice (roll a dice)" +
             "\n" + "> !coin (flip a coin)" +
             "\n" + "> !number (generate a number between 0 and 100)" +
@@ -81,7 +82,7 @@ bot.on('message', message => {
             })
     }
 
-    if (message.content.startsWith(`${prefix}urban`)) {
+    /*if (message.content.startsWith(`${prefix}urban`)) {
         if (args.length < 1) {
             message.channel.send("Please enter an item to search");
         }
@@ -90,7 +91,7 @@ bot.on('message', message => {
         urban(string).first(json => {
             console.log(json);
         })
-    }
+    }*/
 
     if (message.content.startsWith(`${prefix}dice`)) {
         let number = Math.floor(Math.random() * 6) + 1;
