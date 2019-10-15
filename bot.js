@@ -118,6 +118,24 @@ bot.on('message', message => {
         message.channel.send(number);
     }
 
+    if (message.content.startsWith(`${prefix}hug`) && message.content === "!hug") {
+        let member = message.mentions.members.first();
+
+        giphy.search('gifs', { "q": "hug" })
+            .then((response) => {
+                let totalResponses = response.data.length;
+                //all the gif results
+                let responseIndex = Math.floor(Math.random() * totalResponses);
+                //gives random number
+                let responseFinal = response.data[responseIndex];
+                //gives single result
+
+                message.channel.send("@" + member + "\n" + responseFinal.images.fixed_height.url)
+            }).catch(() => {
+                message.channel.send('> !ERROR!');
+            })
+    }
+
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
     //kick only works with ppl who have kick and ban perms
     {
