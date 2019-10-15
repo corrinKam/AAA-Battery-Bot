@@ -119,25 +119,6 @@ bot.on('message', message => {
         message.channel.send(number);
     }
 
-    if (message.content.startsWith(`${prefix}hug`) && message.content === "!hug") {
-        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-
-        giphy.search('gifs', { "q": "hug" })
-            .then((response) => {
-                let totalResponses = response.data.length;
-                //all the gif results
-                let responseIndex = Math.floor(Math.random() * totalResponses);
-                //gives random number
-                let responseFinal = response.data[responseIndex];
-                //gives single result
-
-                message.channel.send(responseFinal.images.fixed_height.url);
-                message.reply(`${member.user.tag} gets hugs`);
-            }).catch(() => {
-                message.channel.send('> !ERROR!');
-            })
-    }
-
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
     //kick only works with ppl who have kick and ban perms
     {
@@ -160,7 +141,8 @@ bot.on('message', message => {
                     })
             })
         }
-    }
+    } else if (!message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
+        return message.reply("You do not have the permissions to do that");
 
     if (message.content === "!h" || message.content === "!he" || message.content === "!hel") {
         message.channel.send("Did you mean !help?");
