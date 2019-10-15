@@ -97,14 +97,44 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}dice`) && message.content === "!dice") {
-        let number = Math.floor(Math.random() * 6) + 1;
         message.channel.send("Rolling a die...");
+
+        giphy.search('gifs', { "q": "dice throw" })
+            .then((response) => {
+                let totalResponses = response.data.length;
+                //all the gif results
+                let responseIndex = Math.floor(Math.random() * totalResponses);
+                //gives random number
+                let responseFinal = response.data[responseIndex];
+                //gives single result
+
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
+                    message.channel.send('> !ERROR!');
+                })
+            })
+
+        let number = Math.floor(Math.random() * 6) + 1;
         message.channel.send(number);
     }
 
     if (message.content.startsWith(`${prefix}coin`) && message.content === "!coin") {
-        let coin = Math.floor(Math.random() * 2);
         message.channel.send("Flipping a coin...");
+
+        giphy.search('gifs', { "q": "coin toss" })
+            .then((response) => {
+                let totalResponses = response.data.length;
+                //all the gif results
+                let responseIndex = Math.floor(Math.random() * totalResponses);
+                //gives random number
+                let responseFinal = response.data[responseIndex];
+                //gives single result
+
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
+                    message.channel.send('> !ERROR!');
+                })
+            })
+
+        let coin = Math.floor(Math.random() * 2);
         if (coin === 1) {
             message.channel.send("Heads!");
         } else {
