@@ -120,7 +120,7 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}hug`) && message.content === "!hug") {
-        let member = message.mentions.members.first();
+        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
 
         giphy.search('gifs', { "q": "hug" })
             .then((response) => {
@@ -132,7 +132,7 @@ bot.on('message', message => {
                 //gives single result
 
                 message.channel.send(responseFinal.images.fixed_height.url);
-                message.channel.send(`${member.user.tag} gets hugs`);
+                message.reply(`${member.user.tag} gets hugs`);
             }).catch(() => {
                 message.channel.send('> !ERROR!');
             })
