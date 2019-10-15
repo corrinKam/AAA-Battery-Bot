@@ -132,6 +132,7 @@ bot.on('message', message => {
                 //gives single result
 
                 message.channel.send(responseFinal.images.fixed_height.url);
+                message.channel.send(`${member.user.tag} gets hugs`);
             }).catch(() => {
                 message.channel.send('> !ERROR!');
             })
