@@ -131,8 +131,7 @@ bot.on('message', message => {
                 let responseFinal = response.data[responseIndex];
                 //gives single result
 
-                message.channel.send(member.id + " " + "\n" + responseFinal.images.fixed_height.url);
-                //message.channel.send("@" + member.id);
+                message.channel.send(responseFinal.images.fixed_height.url);
             }).catch(() => {
                 message.channel.send('> !ERROR!');
             })
