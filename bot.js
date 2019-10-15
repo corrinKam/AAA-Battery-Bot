@@ -141,8 +141,7 @@ bot.on('message', message => {
                     })
             })
         }
-    } else if (!message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
-        return message.reply("You do not have the permissions to do that");
+    }
 
     if (message.content === "!h" || message.content === "!he" || message.content === "!hel") {
         message.channel.send("Did you mean !help?");
