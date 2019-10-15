@@ -99,7 +99,7 @@ bot.on('message', message => {
     if (message.content.startsWith(`${prefix}dice`) && message.content === "!dice") {
         message.channel.send("Rolling a die...");
 
-        giphy.search('gifs', { "q": "dice throw" })
+        giphy.search('gifs', { "q": "dice" })
             .then((response) => {
                 let totalResponses = response.data.length;
                 //all the gif results
@@ -120,7 +120,7 @@ bot.on('message', message => {
     if (message.content.startsWith(`${prefix}coin`) && message.content === "!coin") {
         message.channel.send("Flipping a coin...");
 
-        giphy.search('gifs', { "q": "coin toss" })
+        giphy.search('gifs', { "q": "coin" })
             .then((response) => {
                 let totalResponses = response.data.length;
                 //all the gif results
