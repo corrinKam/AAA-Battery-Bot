@@ -29,6 +29,7 @@ bot.on('message', message => {
             "\n" + "> !dice (roll a dice)" +
             "\n" + "> !coin (flip a coin)" +
             "\n" + "> !number (generate a number between 0 and 100)" +
+            "\n" + "> !hug" +
             "\n" + "> !help");
     }
 
