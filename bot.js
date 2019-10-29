@@ -131,11 +131,11 @@ bot.on('message', message => {
             let member = message.mentions.members.first();
 
             if (!member) {
-                return message.reply('Mention a user to kick with @')
+                return message.reply('mention a user to kick with @')
             }
 
             if (!member.kickable) {
-                return message.reply('Member cannot be kicked')
+                return message.reply('This user cannot be kicked')
             }
 
             return member
