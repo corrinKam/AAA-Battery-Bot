@@ -139,16 +139,6 @@ bot.on('message', message => {
             }
 
             return member
-            giphy.search('gifs', { "q": "bye" })
-                .then((response) => {
-                    let totalResponses = response.data.length;
-                    let responseIndex = Math.floor(Math.random() * totalResponses);
-                    let responseFinal = response.data[responseIndex];
-
-                    message.channel.send(":wave: " + "User: '" + member.displayName + "' has been kicked!" + "\n" + responseFinal.images.fixed_height.url)
-                }).catch(() => {
-                    message.channel.send('> !ERROR!');
-                })
                 .kick()
                 .then(() => message.reply(`${member.user.tag} was kicked`))
                 .catch(error => message.reply("!ERROR!"))
