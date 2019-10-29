@@ -17,7 +17,7 @@ bot.once('ready', () => {
 })
 
 bot.on('guildMemberAdd', member => {
-    member.send('Welcome to this server!')
+    member.reply('Welcome to the server!')
 })
 
 bot.on('message', message => {
