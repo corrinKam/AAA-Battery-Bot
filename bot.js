@@ -16,6 +16,10 @@ bot.once('ready', () => {
     console.log("AAA Battery ONLINE")
 })
 
+bot.on('guildMemberAdd', member => {
+    member.send('Welcome to this server!')
+})
+
 bot.on('message', message => {
     console.log(message.content);
     //logs all messages sent to console
@@ -125,8 +129,21 @@ bot.on('message', message => {
     {
         if (message.content.startsWith(`${prefix}kick`)) {
             let member = message.mentions.members.first();
-            //any mentions in the message line above
-            member.kick().then((member) => {
+
+            if (!member) {
+                return message.reply('Mention a user to kick with @')
+            }
+
+            if (!member.kickable) {
+                return message.reply('Member cannot be kicked')
+            }
+
+            return member
+                .kick()
+                .then(() => message.reply(`${member.user.tag} was kicked`))
+                .catch(error => message.reply("!ERROR!"))
+
+            /*member.kick().then((member) => {
                 giphy.search('gifs', { "q": "bye" })
                     .then((response) => {
                         let totalResponses = response.data.length;
@@ -140,7 +157,7 @@ bot.on('message', message => {
                     }).catch(() => {
                         message.channel.send('> !ERROR!');
                     })
-            })
+            })*/
         }
     }
 
