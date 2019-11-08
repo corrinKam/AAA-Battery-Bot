@@ -1,7 +1,7 @@
 //Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
-const prefix = "=";
+const prefix = "!";
 const bot = new Discord.Client();
 
 const bot_token = process.env.BOT_TOKEN;
@@ -14,10 +14,6 @@ giphy = GphApiClient(giphy_token)
 
 bot.once('ready', () => {
     console.log("AAA Battery ONLINE")
-})
-
-bot.on('guildMemberAdd', member => {
-    member.send('Welcome to the server!')
 })
 
 bot.on('message', message => {
