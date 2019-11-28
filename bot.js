@@ -98,6 +98,7 @@ bot.on('message', message => {
 
     if (message.content.startsWith(`${prefix}dice`) && message.content === "!dice") {
         message.channel.send("Rolling a die...");
+        message.channel.send("...");
 
         let number = Math.floor(Math.random() * 6) + 1;
         message.channel.send(number);
@@ -105,6 +106,7 @@ bot.on('message', message => {
 
     if (message.content.startsWith(`${prefix}coin`) && message.content === "!coin") {
         message.channel.send("Flipping a coin...");
+        message.channel.send("...");
 
         let coin = Math.floor(Math.random() * 2);
         if (coin === 1) {
@@ -117,6 +119,7 @@ bot.on('message', message => {
     if (message.content.startsWith(`${prefix}number`) && message.content === "!number") {
         let number = Math.floor(Math.random() * 100);
         message.channel.send("Generating a random number...");
+        message.channel.send("...");
         message.channel.send(number);
     }
 
