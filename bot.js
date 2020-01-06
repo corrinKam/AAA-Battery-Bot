@@ -34,7 +34,7 @@ bot.on('message', message => {
         message.channel.send({embed: new Discord.RichEmbed()
             .setTitle(`Commands`)
             .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
-            .setDescription("> !gif (random gif)" +
+            .setDescription("!gif (random gif)" +
             "\n" + "!cat (random cat gif)" +
             "\n" + "!dog (random dog gif)" +
             "\n" + "!bird (random bird gif)" +
