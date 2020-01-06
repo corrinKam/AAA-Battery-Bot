@@ -195,6 +195,10 @@ bot.on('message', message => {
         message.channel.send("Pong!");
     }
 
+    if (message.content.toLowerCase() === "pong") {
+        message.channel.send("Ping??");
+    }
+
     if (message.content.includes("rood") || message.content.includes("r00d") || message.content.includes("rOOd")) {
         message.channel.send(":p")
     }
