@@ -35,6 +35,7 @@ bot.on('message', message => {
             .setTitle(`Commands`)
             .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
             .setDescription("hello")
+        });
     }
 
     if (message.content.startsWith(`${prefix}cat`) && message.content === "!cat") {
