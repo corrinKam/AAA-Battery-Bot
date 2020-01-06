@@ -187,10 +187,6 @@ bot.on('message', message => {
         message.channel.send("what's this?");
     }
 
-    /*if (message.content === "ping" || message.content === "Ping") {
-        message.channel.send("Pong!");
-    }*/
-
     if (message.content.toLowerCase() === "ping") {
         message.channel.send("Pong!");
     }
@@ -199,8 +195,12 @@ bot.on('message', message => {
         message.channel.send("Ping??");
     }
 
-    if (message.content.includes("rood") || message.content.includes("r00d") || message.content.includes("rOOd")) {
+    /*if (message.content.includes("rood") || message.content.includes("r00d") || message.content.includes("rOOd")) {
         message.channel.send(":p")
+    }*/
+
+    if (message.content.includes.toLowerCase() === "rood"){
+        message.channel.send(":p");
     }
 })
 
