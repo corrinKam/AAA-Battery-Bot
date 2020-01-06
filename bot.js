@@ -34,7 +34,14 @@ bot.on('message', message => {
         message.channel.send({embed: new Discord.RichEmbed()
             .setTitle(`Commands`)
             .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
-            .setDescription("hello")
+            .setDescription("> !gif (random gif)" +
+            "\n" + "> !cat (random cat gif)" +
+            "\n" + "> !dog (random dog gif)" +
+            "\n" + "> !bird (random bird gif)" +
+            "\n" + "> !dice (roll a dice)" +
+            "\n" + "> !coin (flip a coin)" +
+            "\n" + "> !number (generate a number between 0 and 100)" +
+            "\n" + "> !help")
         });
     }
 
