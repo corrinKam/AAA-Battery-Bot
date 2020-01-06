@@ -187,7 +187,11 @@ bot.on('message', message => {
         message.channel.send("what's this?");
     }
 
-    if (message.content === "ping" || message.content === "Ping") {
+    /*if (message.content === "ping" || message.content === "Ping") {
+        message.channel.send("Pong!");
+    }*/
+
+    if (message.content.toLowerCase() === "ping") {
         message.channel.send("Pong!");
     }
 
