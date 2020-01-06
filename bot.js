@@ -55,9 +55,15 @@ bot.on('message', message => {
                 let responseFinal = response.data[responseIndex];
                 //gives single result
 
-                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
+                /*message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
                     message.channel.send('> !ERROR!');
-                })
+                })*/
+
+                message.channel.send({embed: new Discord.RichEmbed()
+                    .setTitle(`Cat`)
+                    .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
+                    .setDescription(responseFinal.images.fixed_height.url)
+                });
             })
     }
 
