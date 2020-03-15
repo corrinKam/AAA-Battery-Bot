@@ -1,7 +1,7 @@
 //Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
-const prefix = '!!';
+const prefix = "!";
 const bot = new Discord.Client();
 
 const bot_token = process.env.BOT_TOKEN;
@@ -55,15 +55,15 @@ bot.on('message', message => {
                 let responseFinal = response.data[responseIndex];
                 //gives single result
 
-                /*message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
+                message.channel.send(responseFinal.images.fixed_height.url).catch(() => {
                     message.channel.send('> !ERROR!');
-                })*/
+                })
 
-                message.channel.send({embed: new Discord.RichEmbed()
+                /*message.channel.send({embed: new Discord.RichEmbed()
                     .setTitle(`Cat`)
                     .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
                     .setDescription(responseFinal.images.fixed_height.url)
-                });
+                });*/
             })
     }
 
@@ -116,30 +116,52 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith(`${prefix}dice`) && message.content === "!dice") {
-        message.channel.send("Rolling a die...");
-        message.channel.send("...");
+        //message.channel.send("Rolling a die...");
+        //message.channel.send("...");
 
         let number = Math.floor(Math.random() * 6) + 1;
-        message.channel.send(number);
+        //message.channel.send(number);
+
+        message.channel.send({embed: new Discord.RichEmbed()
+            .setTitle(`Roll a die`)
+            .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
+            .setDescription(number)
+        });
     }
 
     if (message.content.startsWith(`${prefix}coin`) && message.content === "!coin") {
-        message.channel.send("Flipping a coin...");
-        message.channel.send("...");
+        //message.channel.send("Flipping a coin...");
+        //message.channel.send("...");
+
+        var coinResult;
 
         let coin = Math.floor(Math.random() * 2);
         if (coin === 1) {
-            message.channel.send("Heads!");
+            coinResult = "Heads!";
+            //message.channel.send("Heads!");
         } else {
-            message.channel.send("Tails!");
+            coinResult = "Tails!";
+            //message.channel.send("Tails!");
         }
+
+        message.channel.send({embed: new Discord.RichEmbed()
+            .setTitle(`Flip a coin`)
+            .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
+            .setDescription(coinResult)
+        });
     }
 
     if (message.content.startsWith(`${prefix}number`) && message.content === "!number") {
         let number = Math.floor(Math.random() * 100);
-        message.channel.send("Generating a random number...");
+        /*message.channel.send("Generating a random number...");
         message.channel.send("...");
-        message.channel.send(number);
+        message.channel.send(number);*/
+
+        message.channel.send({embed: new Discord.RichEmbed()
+            .setTitle(`Random number`)
+            .setColor([Math.floor(Math.random()*256), Math.floor(Math.random()*256), Math.floor(Math.random()*256)])
+            .setDescription(number)
+        });
     }
 
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
@@ -182,10 +204,6 @@ bot.on('message', message => {
     if (message.content === "!h" || message.content === "!he" || message.content === "!hel") {
         message.channel.send("Did you mean !help?");
     }
-
-    /*if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
-        message.channel.send("what's this?");
-    }*/
 
     if (message.content.toLowerCase() === "owo") {
         message.channel.send("what's this?");
