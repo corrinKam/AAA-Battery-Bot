@@ -183,7 +183,11 @@ bot.on('message', message => {
         message.channel.send("Did you mean !help?");
     }
 
-    if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
+    /*if (message.content === "owo" || message.content === "OWO" || message.content === "Owo" || message.content === "OWo" || message.content === "oWo" || message.content === "oWO") {
+        message.channel.send("what's this?");
+    }*/
+
+    if (message.content.toLowerCase() === "owo") {
         message.channel.send("what's this?");
     }
 
