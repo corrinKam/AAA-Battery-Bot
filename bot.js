@@ -164,6 +164,10 @@ bot.on('message', message => {
         });
     }
 
+    if (message.content.startsWith(`${prefix}git`)) {
+        message.channel.send("https://github.com/corrinKam/AAA-Battery-Bot");
+    }
+
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
     //kick only works with ppl who have kick and ban perms
     {
