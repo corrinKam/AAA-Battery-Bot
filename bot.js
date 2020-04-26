@@ -21,15 +21,6 @@ bot.on('message', message => {
     //logs all messages sent to console
 
     if (message.content.startsWith(`${prefix}help`) && message.content === "!help") {
-        /*message.channel.send("> List of available commands:" + " \n" +
-            "> \n" + "> !gif (random gif)" +
-            "\n" + "> !cat (random cat gif)" +
-            "\n" + "> !dog (random dog gif)" +
-            "\n" + "> !bird (random bird gif)" +
-            "\n" + "> !dice (roll a dice)" +
-            "\n" + "> !coin (flip a coin)" +
-            "\n" + "> !number (generate a number between 0 and 100)" +
-            "\n" + "> !help");*/
 
         message.channel.send({embed: new Discord.RichEmbed()
             .setTitle(`Commands`)
@@ -42,7 +33,7 @@ bot.on('message', message => {
             "\n" + "!coin (flip a coin)" +
             "\n" + "!number (generate a number between 0 and 100)" +
             "\n" + "!help" +
-            "\n" + "!git (links you to my github page)")
+            "\n" + "!git")
         });
     }
 
