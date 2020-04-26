@@ -16,10 +16,6 @@ bot.once('ready', () => {
     console.log("AAA Battery ONLINE")
 })
 
-bot.user.setActivity("!help", {
-    type: "PLAYING",
-  });
-
 bot.on('message', message => {
     console.log(message.content);
     //logs all messages sent to console
