@@ -20,7 +20,7 @@ bot.on('message', message => {
     console.log(message.content);
     //logs all messages sent to console
 
-    client.user.setStatus('online', 'type !help');
+    bot.user.setStatus('online', 'type !help');
 
     if (message.content.startsWith(`${prefix}help`) && message.content === "!help") {
         /*message.channel.send("> List of available commands:" + " \n" +
