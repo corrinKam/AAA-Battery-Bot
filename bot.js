@@ -16,11 +16,13 @@ bot.once('ready', () => {
     console.log("AAA Battery ONLINE")
 })
 
+bot.user.setActivity("!help", {
+    type: "PLAYING",
+  });
+
 bot.on('message', message => {
     console.log(message.content);
     //logs all messages sent to console
-
-    bot.user.setStatus('online', 'type !help');
 
     if (message.content.startsWith(`${prefix}help`) && message.content === "!help") {
         /*message.channel.send("> List of available commands:" + " \n" +
