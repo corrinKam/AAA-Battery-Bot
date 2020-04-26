@@ -156,6 +156,10 @@ bot.on('message', message => {
         });
     }
 
+    /*if (message.content.startsWith(`${prefix}`) && message.content === "!") {
+
+    }*/
+
     if (message.content.startsWith(`${prefix}git`)) {
         message.channel.send("https://github.com/corrinKam/AAA-Battery-Bot");
     }
