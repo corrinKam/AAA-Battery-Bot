@@ -1,7 +1,7 @@
 //Discord Bot: AAA Battery Bot
 
 const Discord = require('discord.js');
-const prefix = "a!";
+const prefix = "!!";
 const bot = new Discord.Client();
 
 const bot_token = process.env.BOT_TOKEN;
