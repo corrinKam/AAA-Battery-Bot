@@ -20,7 +20,7 @@ bot.on('message', message => {
     console.log(message.content);
     //logs all messages sent to console
 
-    if (message.content.startsWith(`${prefix}help`) && message.content === "!help") {
+    if (message.content.startsWith(`${prefix}help`) && message.content === "!!help") {
 
         message.channel.send({embed: new Discord.RichEmbed()
             .setTitle(`Commands`)
@@ -37,7 +37,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.startsWith(`${prefix}cat`) && message.content === "!cat") {
+    if (message.content.startsWith(`${prefix}cat`) && message.content === "!!cat") {
         giphy.search('gifs', { "q": "cat" })
             .then((response) => {
                 let totalResponses = response.data.length;
@@ -59,7 +59,7 @@ bot.on('message', message => {
             })
     }
 
-    if (message.content.startsWith(`${prefix}dog`) && message.content === "!dog") {
+    if (message.content.startsWith(`${prefix}dog`) && message.content === "!!dog") {
         giphy.search('gifs', { "q": "dog" })
             .then((response) => {
                 let totalResponses = response.data.length;
@@ -75,7 +75,7 @@ bot.on('message', message => {
             })
     }
 
-    if (message.content.startsWith(`${prefix}bird`) && message.content === "!bird") {
+    if (message.content.startsWith(`${prefix}bird`) && message.content === "!!bird") {
         giphy.search('gifs', { "q": "bird" })
             .then((response) => {
                 let totalResponses = response.data.length;
@@ -91,7 +91,7 @@ bot.on('message', message => {
             })
     }
 
-    if (message.content.startsWith(`${prefix}gif`) && message.content === "!gif") {
+    if (message.content.startsWith(`${prefix}gif`) && message.content === "!!gif") {
         giphy.search('gifs', { "q": "random" })
             .then((response) => {
                 let totalResponses = response.data.length;
@@ -107,7 +107,7 @@ bot.on('message', message => {
             })
     }
 
-    if (message.content.startsWith(`${prefix}dice`) && message.content === "!dice") {
+    if (message.content.startsWith(`${prefix}dice`) && message.content === "!!dice") {
         //message.channel.send("Rolling a die...");
         //message.channel.send("...");
 
@@ -121,7 +121,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.startsWith(`${prefix}coin`) && message.content === "!coin") {
+    if (message.content.startsWith(`${prefix}coin`) && message.content === "!!coin") {
         //message.channel.send("Flipping a coin...");
         //message.channel.send("...");
 
@@ -143,7 +143,7 @@ bot.on('message', message => {
         });
     }
 
-    if (message.content.startsWith(`${prefix}number`) && message.content === "!number") {
+    if (message.content.startsWith(`${prefix}number`) && message.content === "!!number") {
         let number = Math.floor(Math.random() * 100);
         /*message.channel.send("Generating a random number...");
         message.channel.send("...");
@@ -201,7 +201,7 @@ bot.on('message', message => {
         }
     }
 
-    if (message.content === "!h" || message.content === "!he" || message.content === "!hel") {
+    if (message.content === "!!h" || message.content === "!!he" || message.content === "!!hel") {
         message.channel.send("Did you mean !help?");
     }
 
