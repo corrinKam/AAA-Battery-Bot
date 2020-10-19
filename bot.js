@@ -209,7 +209,7 @@ bot.on('message', message => {
         message.channel.send("what's this?");
     }
 
-    if (message.content.toLowerCase() === "uwu") {
+    if (message.content.toLowerCase() === "uwu" || message.content.includes("uwu")) {
         message.channel.send("<3");
     }
 
