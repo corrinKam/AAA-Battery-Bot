@@ -211,6 +211,7 @@ bot.on('message', message => {
 
     if (message.content.toLowerCase() === "uwu" || message.content.includes("uwu")) {
         message.channel.send("<3");
+        //whenever you see this, add a thing that pings the person if you mention someone the uwu heart HAHA 19.10.20
     }
 
     if (message.content.toLowerCase() === "ping") {
