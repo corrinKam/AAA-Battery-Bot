@@ -209,6 +209,10 @@ bot.on('message', message => {
         message.channel.send("what's this?");
     }
 
+    if (message.content.toLowerCase() === "uwu") {
+        message.channel.send("<3");
+    }
+
     if (message.content.toLowerCase() === "ping") {
         message.channel.send("Pong!");
     }
