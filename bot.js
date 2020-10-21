@@ -174,7 +174,8 @@ bot.on('message', message => {
         }
         else {
             //message.channel.send(`@${member.user.tag} was bonked`);
-            message.channel.send(member + 'was bonked');
+            message.channel.send("https://cdn.discordapp.com/attachments/611184671371558922/768381006830895104/Screen_Shot_2020-04-28_at_12.png");
+            message.channel.send(member + ' was bonked');
         }
     }
 
@@ -195,7 +196,7 @@ bot.on('message', message => {
             return member
                 .kick()
                 //.then(() => message.reply(`@${member.user.tag} was kicked`))
-                .then(() => message.reply(member + "was kicked"))
+                .then(() => message.reply(member + " was kicked"))
                 .catch(error => message.reply("!ERROR!"))
 
             /*member.kick().then((member) => {
