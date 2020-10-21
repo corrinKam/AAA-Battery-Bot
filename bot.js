@@ -164,6 +164,19 @@ bot.on('message', message => {
         message.channel.send("https://github.com/corrinKam/AAA-Battery-Bot");
     }
 
+    if (message.content.startsWith(`${prefix}bonk`)) {
+        //message.channel.send("https://cdn.discordapp.com/attachments/611184671371558922/768381006830895104/Screen_Shot_2020-04-28_at_12.png");
+        
+        let member = message.mentions.members.first();
+
+        if  (!member) {
+            return message.channel.send("https://cdn.discordapp.com/attachments/611184671371558922/768381006830895104/Screen_Shot_2020-04-28_at_12.png");
+        }
+        else {
+            message.channel.send(`@${member.user.tag} was bonked`)
+        }
+    }
+
     if (message.member.hasPermission(['KICK_MEMBERS', 'BAN_MEMBERS']))
     //kick only works with ppl who have kick and ban perms
     {
@@ -180,7 +193,7 @@ bot.on('message', message => {
 
             return member
                 .kick()
-                .then(() => message.reply(`${member.user.tag} was kicked`))
+                .then(() => message.reply(`@${member.user.tag} was kicked`))
                 .catch(error => message.reply("!ERROR!"))
 
             /*member.kick().then((member) => {
